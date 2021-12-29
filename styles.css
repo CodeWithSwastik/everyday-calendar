@@ -56,6 +56,7 @@ body::-webkit-scrollbar-thumb {
 
 #about a {
   color: var(--main-accent);
+  text-decoration: none;
 }
 #calendar {
   border: 4px solid var(--main-accent);
@@ -148,6 +149,11 @@ footer {
   padding: 20px;
   width: 100%;
   color: #fff;
+}
+
+footer a {
+  color: var(--main-accent);
+  text-decoration: none;
 }
 
 .heart {
