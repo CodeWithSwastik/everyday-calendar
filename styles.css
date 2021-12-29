@@ -60,7 +60,8 @@ body::-webkit-scrollbar-thumb {
 #calendar {
   border: 4px solid var(--main-accent);
   border-radius: 8px;
-  margin: 0px 300px;
+  margin: auto;
+  width: 60vw;
   padding: 34px 28px;
 }
 
