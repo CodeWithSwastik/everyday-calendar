@@ -15,7 +15,7 @@ function renderCalendar(date) {
     button.appendChild(node);
     calendarBody.appendChild(button);
     button.addEventListener("click", () => {
-      new Audio("success.mp3").play();
+      new Audio("sfx/success.mp3").play();
       button.classList.add("pressed");
       button.disabled = true;
       setDateData(i, month, year, true);
@@ -62,10 +62,23 @@ const back = document.getElementById("back");
 back.addEventListener("click", () => {
   curDate = moment(curDate).add(-1, "month").toDate();
   renderCalendar(curDate);
+  new Audio("sfx/pop.wav").play();
 });
 
 const forward = document.getElementById("forward");
 forward.addEventListener("click", () => {
   curDate = moment(curDate).add(1, "month").toDate();
   renderCalendar(curDate);
+  new Audio("sfx/pop.wav").play();
+});
+
+const reset = document.getElementById("reset");
+reset.addEventListener("click", () => {
+  let obj = JSON.parse(localStorage.getItem("data"));
+  obj[curDate.getFullYear()][
+    curDate.toLocaleString("default", { month: "long" })
+  ] = {};
+  localStorage.setItem("data", JSON.stringify(obj));
+  renderCalendar(curDate);
+  new Audio("sfx/pop.wav").play();
 });
