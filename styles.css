@@ -40,6 +40,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: calc(50px - 5vw);
 }
 
 .heading h1 {
@@ -52,7 +53,6 @@ body::-webkit-scrollbar-thumb {
 
 #about {
   color: #aaa;
-  margin-bottom: 5px;
 }
 
 #about a {
