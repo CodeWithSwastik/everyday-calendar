@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everyday Calender</title>
+
+    <!-- Open graph -->
+    <meta
+      name="description"
+      content="A web version of the Everyday Calender."
+    />
+    <meta content="#9affe1" name="theme-color" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Everyday Calender</h1>
+      <div id="about">
+        Track your habits with this everyday calender. Inspired by
+        <a href="https://youtu.be/-lpvy-xkSNA">
+          Simone Gietz's Everyday Calendar.
+        </a>
+      </div>
+    </div>
+
+    <div id="calender">
+      <div id="header">
+        <h2 id="month"></h2>
+        <h2 id="year"></h2>
+        <div class="buttons">
+          <button id="back"><i class="fas fa-backward"></i></button>
+          <button id="forward"><i class="fas fa-forward"></i></button>
+        </div>
+      </div>
+      <div id="body"></div>
+    </div>
+
+    <div id="empty"></div>
+
+    <!-- Footer  -->
+    <footer>
+      <p>Made with <span class="heart">&#x2764;</span> by Swas.py</p>
+    </footer>
+  </body>
+  <script src="moment.js"></script>
+
+  <script src="index.js"></script>
+</html>
