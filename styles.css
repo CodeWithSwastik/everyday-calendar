@@ -64,7 +64,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   margin: auto;
   width: 60vw;
-  padding: 34px 28px;
+  padding: 34px 1vw;
 }
 
 #header {
