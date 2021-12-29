@@ -1,6 +1,6 @@
 function renderCalendar(date) {
-  const calendarBody = document.getElementById("body");
-  calendarBody.innerHTML = "";
+  const calenderBody = document.getElementById("body");
+  calenderBody.innerHTML = "";
   const year = date.getFullYear();
   const month = date.toLocaleString("default", { month: "long" });
   const yearElement = document.getElementById("year");
@@ -13,7 +13,7 @@ function renderCalendar(date) {
     button.classList.add("button");
     const node = document.createTextNode(`${i}`);
     button.appendChild(node);
-    calendarBody.appendChild(button);
+    calenderBody.appendChild(button);
     button.addEventListener("click", () => {
       new Audio("success.mp3").play();
       button.classList.add("pressed");

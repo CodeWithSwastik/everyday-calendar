@@ -7,10 +7,9 @@
 }
 
 :root {
-  --main-accent: #9affe1;
+  --main-accent: #6bfaff;
   --main-bg: #111111;
   --darker-bg: #151515;
-  --secondary: #6bfaff;
 }
 
 body {
