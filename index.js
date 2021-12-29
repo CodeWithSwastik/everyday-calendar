@@ -1,6 +1,6 @@
-function renderCalender(date) {
-  const calenderBody = document.getElementById("body");
-  calenderBody.innerHTML = "";
+function renderCalendar(date) {
+  const calendarBody = document.getElementById("body");
+  calendarBody.innerHTML = "";
   const year = date.getFullYear();
   const month = date.toLocaleString("default", { month: "long" });
   const yearElement = document.getElementById("year");
@@ -13,7 +13,7 @@ function renderCalender(date) {
     button.classList.add("button");
     const node = document.createTextNode(`${i}`);
     button.appendChild(node);
-    calenderBody.appendChild(button);
+    calendarBody.appendChild(button);
     button.addEventListener("click", () => {
       new Audio("success.mp3").play();
       button.classList.add("pressed");
@@ -57,15 +57,15 @@ if (!localStorage.getItem("data")) {
 }
 
 let curDate = new Date();
-renderCalender(curDate);
+renderCalendar(curDate);
 const back = document.getElementById("back");
 back.addEventListener("click", () => {
   curDate = moment(curDate).add(-1, "month").toDate();
-  renderCalender(curDate);
+  renderCalendar(curDate);
 });
 
 const forward = document.getElementById("forward");
 forward.addEventListener("click", () => {
   curDate = moment(curDate).add(1, "month").toDate();
-  renderCalender(curDate);
+  renderCalendar(curDate);
 });
