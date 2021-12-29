@@ -132,6 +132,10 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+#colorPicker {
+  visibility: hidden;
+}
+
 #settings button:hover {
   background-color: #222;
 }

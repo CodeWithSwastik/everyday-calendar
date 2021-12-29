@@ -93,7 +93,6 @@ if (!accentColor) {
 
 const colorPicker = document.getElementById("colorPicker");
 colorPicker.value = accentColor;
-colorPicker.style.visibility = "hidden";
 colorPicker.addEventListener("input", () => {
   const root = document.querySelector(":root");
   root.style.setProperty("--main-accent", colorPicker.value);
