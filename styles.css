@@ -57,7 +57,7 @@ body::-webkit-scrollbar-thumb {
 #about a {
   color: var(--main-accent);
 }
-#calender {
+#calendar {
   border: 4px solid var(--main-accent);
   border-radius: 8px;
   margin: 0px 300px;
