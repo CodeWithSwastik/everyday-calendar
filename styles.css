@@ -52,6 +52,7 @@ body::-webkit-scrollbar-thumb {
 
 #about {
   color: #aaa;
+  margin-bottom: 5px;
 }
 
 #about a {
