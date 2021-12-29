@@ -82,3 +82,26 @@ reset.addEventListener("click", () => {
   renderCalendar(curDate);
   new Audio("sfx/pop.wav").play();
 });
+
+const root = document.querySelector(":root");
+let accentColor = localStorage.getItem("accent");
+if (!accentColor) {
+  localStorage.setItem("accent", root.style.getPropertyValue("--main-accent"));
+} else {
+  root.style.setProperty("--main-accent", accentColor);
+}
+
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.value = accentColor;
+colorPicker.style.visibility = "hidden";
+colorPicker.addEventListener("input", () => {
+  const root = document.querySelector(":root");
+  root.style.setProperty("--main-accent", colorPicker.value);
+  localStorage.setItem("accent", colorPicker.value);
+});
+
+const colorPickerToggle = document.getElementById("colorPickerToggle");
+colorPickerToggle.addEventListener("click", () => {
+  colorPicker.focus();
+  colorPicker.click();
+});
