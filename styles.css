@@ -87,6 +87,13 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+#body {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 65px);
+}
+
 .button {
   border: 3px solid var(--main-accent);
   border-radius: 14px;
