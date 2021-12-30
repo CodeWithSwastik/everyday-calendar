@@ -120,7 +120,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 40px;
 }
 
 #settings button {
