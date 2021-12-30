@@ -1,3 +1,5 @@
+let sfx = true;
+
 function renderCalendar(date) {
   const calendarBody = document.getElementById("body");
   calendarBody.innerHTML = "";
@@ -15,7 +17,7 @@ function renderCalendar(date) {
     button.appendChild(node);
     calendarBody.appendChild(button);
     button.addEventListener("click", () => {
-      new Audio("sfx/success.mp3").play();
+      if (sfx) new Audio("sfx/success.mp3").play();
       button.classList.add("pressed");
       button.disabled = true;
       setDateData(i, month, year, true);
@@ -62,14 +64,14 @@ const back = document.getElementById("back");
 back.addEventListener("click", () => {
   curDate = moment(curDate).add(-1, "month").toDate();
   renderCalendar(curDate);
-  new Audio("sfx/pop.wav").play();
+  if (sfx) new Audio("sfx/pop.wav").play();
 });
 
 const forward = document.getElementById("forward");
 forward.addEventListener("click", () => {
   curDate = moment(curDate).add(1, "month").toDate();
   renderCalendar(curDate);
-  new Audio("sfx/pop.wav").play();
+  if (sfx) new Audio("sfx/pop.wav").play();
 });
 
 const reset = document.getElementById("reset");
@@ -80,7 +82,7 @@ reset.addEventListener("click", () => {
   ] = {};
   localStorage.setItem("data", JSON.stringify(obj));
   renderCalendar(curDate);
-  new Audio("sfx/pop.wav").play();
+  if (sfx) new Audio("sfx/pop.wav").play();
 });
 
 const root = document.querySelector(":root");
@@ -103,4 +105,20 @@ const colorPickerToggle = document.getElementById("colorPickerToggle");
 colorPickerToggle.addEventListener("click", () => {
   colorPicker.focus();
   colorPicker.click();
+  if (sfx) new Audio("sfx/pop.wav").play();
+});
+
+const sfxToggle = document.getElementById("sfxToggle");
+const sfxToggleIcon = document.getElementById("sfxToggleIcon");
+sfxToggle.addEventListener("click", () => {
+  sfx = !sfx;
+  if (sfxToggleIcon.classList.contains("fa-volume-up")) {
+    console.log("wea");
+    sfxToggleIcon.classList.remove("fa-volume-up");
+    sfxToggleIcon.classList.add("fa-volume-mute");
+  } else {
+    sfxToggleIcon.classList.remove("fa-volume-mute");
+    sfxToggleIcon.classList.add("fa-volume-up");
+  }
+  if (sfx) new Audio("sfx/pop.wav").play();
 });
